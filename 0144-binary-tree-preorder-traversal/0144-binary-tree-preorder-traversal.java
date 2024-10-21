@@ -15,19 +15,16 @@
  */
 class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
-        List<Integer> result = new ArrayList<>();  // List to store the result
-        preorderHelper(root, result);  // Helper function to perform traversal
+        List<Integer> result = new ArrayList<>();
+        preorderHelper(root, result);
         return result;
     }
-    
-    // Helper function to recursively traverse the tree in preorder
     private void preorderHelper(TreeNode node, List<Integer> result) {
         if (node == null) {
             return;
         }
-        
-        result.add(node.val);  // Visit the root
-        preorderHelper(node.left, result);  // Traverse the left subtree
-        preorderHelper(node.right, result);  // Traverse the right subtree
+        result.add(node.val);
+        preorderHelper(node.left, result);
+        preorderHelper(node.right, result);
     }
 }
